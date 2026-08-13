@@ -448,14 +448,6 @@ img{max-width:100%;display:block}
               <div class="val" style="font-weight:400;font-size:13px;color:var(--muted-2)">+249 91 534 8323</div>
             </div>
           </div>
-          <!-- Tom Yang — China sales -->
-          <div class="row">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg></div>
-            <div>
-              <div class="lbl">Tom Yang · 🇨🇳 China</div>
-              <a class="val" href="https://wa.me/8618707737002" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">+86 187 0773 7002</a>
-            </div>
-          </div>
           <div class="row">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg></div>
             <div><div class="lbl" data-i18n="contact.email">Email</div><div class="val" id="cEmail">info@restarsolar.com</div></div>
@@ -469,10 +461,6 @@ img{max-width:100%;display:block}
           <a class="btn btn--sun wa-big" href="https://wa.me/8618825187185" target="_blank" rel="noopener" style="width:100%;justify-content:center">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg>
             <span>WhatsApp Zhang Gang (Sudan)</span>
-          </a>
-          <a class="btn btn--ghost wa-big" href="https://wa.me/8618707737002" target="_blank" rel="noopener" style="width:100%;justify-content:center">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg>
-            <span>WhatsApp Tom Yang (China)</span>
           </a>
         </div>
       </div>
@@ -1019,12 +1007,11 @@ observeReveals();
     .catch(fallbackNonStreaming);
   }
 
-  var AGENT_PHONE = '8618707737002';   // Tom Yang (China)
-  var AGENT_LABEL = 'Tom Yang 🇨🇳';
-  var AGENT_PHONE_2 = '8618825187185'; // Zhang Gang (Sudan)
+  var AGENT_PHONE = '8618825187185';   // Zhang Gang (Sudan)
+  var AGENT_LABEL = 'Zhang Gang 🇸🇩';
   window.CART_API_BASE = '';
   window.CART_CURRENCY = 'SDG';
-  window.CART_WHATSAPP_NUMBER = AGENT_PHONE_2;
+  window.CART_WHATSAPP_NUMBER = AGENT_PHONE;
 
   function addMsg(role, text){
     var d = document.createElement('div');
@@ -1043,7 +1030,6 @@ observeReveals();
       var before = parts[0].trim();
       var orderSummary = parts[1] ? parts[1].trim() : '';
       var waText = encodeURIComponent('🛒 New Order from Restar Solar website:\n\n' + orderSummary);
-      var waUrl1 = 'https://wa.me/' + AGENT_PHONE_2 + '?text=' + waText;
       var waUrl2 = 'https://wa.me/' + AGENT_PHONE + '?text=' + waText;
       var btnStyle = 'display:inline-flex;align-items:center;gap:8px;margin-top:8px;' +
         'background:#25D366;color:#fff;text-decoration:none;' +
@@ -1053,7 +1039,6 @@ observeReveals();
 
       d.innerHTML = (before ? before + '\n\n' : '') +
         '<div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">' +
-        '<a href="' + waUrl1 + '" target="_blank" style="' + btnStyle + '">' + waIcon + 'Send to Zhang Gang 🇸🇩</a>' +
         '<a href="' + waUrl2 + '" target="_blank" style="' + btnStyle + '">' + waIcon + 'Send to ' + AGENT_LABEL + '</a>' +
         '</div>';
     } else {
