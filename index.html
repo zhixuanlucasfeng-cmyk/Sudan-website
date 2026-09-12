@@ -145,6 +145,9 @@ img{max-width:100%;display:block}
 .card h3{font-size:19px;margin-top:8px;font-weight:600}
 .price{font-family:var(--display);font-size:22px;font-weight:600;color:var(--text);margin-top:8px}
 .price small{font-size:13px;color:var(--muted);font-family:var(--body);font-weight:500}
+.stock-badge{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;margin-top:6px}
+.stock-badge--out{background:#FBE7E7;color:#B3261E}
+.stock-badge--low{background:#FFF3E0;color:#B5620A}
 .desc{color:var(--muted);font-size:14px;margin-top:8px;flex:1}
 .card-actions{display:flex;gap:10px;margin-top:18px}
 .card-actions .btn{padding:10px 16px;font-size:14px;flex:1;justify-content:center}
@@ -309,7 +312,7 @@ img{max-width:100%;display:block}
 <header class="header">
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="Restar Solar home">
-      <img src="logo.webp" alt="Restar Solar" style="height:44px;width:auto;object-fit:contain;">
+      <img src="logo.webp" alt="Restar Solar" style="height:56px;width:auto;object-fit:contain;">
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#offer" data-i18n="nav.products">Products</a>
@@ -451,7 +454,7 @@ img{max-width:100%;display:block}
       <div class="contact-direct">
         <span class="eyebrow" data-i18n="contact.or">Or reach us directly</span>
         <div style="margin-top:18px">
-          <!-- Zhang Gang — Sudan expat sales rep -->
+          <!-- Zhang Gang — Sudan local -->
           <div class="row">
             <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg></div>
             <div>
@@ -500,7 +503,7 @@ img{max-width:100%;display:block}
           <a href="#products" data-i18n="nav.catalogue">Catalogue</a>
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#certs" data-i18n="nav.certs">Certificates</a>
-              <a href="https://www.restarsolar.com/product-catalogue/" target="_blank" rel="noopener" data-i18n="nav.download">Download</a>
+          <a href="https://www.restarsolar.com/product-catalogue/" target="_blank" rel="noopener" data-i18n="nav.download">Download</a>
           <a href="https://www.restarsolar.com/projects/" target="_blank" rel="noopener" data-i18n="nav.projects">Projects</a>
           <a href="https://www.restarsolar.com/news/" target="_blank" rel="noopener" data-i18n="nav.news">News</a>
           <a href="https://www.restarsolar.com/faq/" target="_blank" rel="noopener" data-i18n="nav.faq">FAQ</a>
@@ -594,7 +597,7 @@ const I18N = {
     "modal.specs":"Specifications","modal.inquire":"Inquire on WhatsApp","modal.price":"Price",
     "footer.tag":"Reliable solar power for Sudan's homes, shops, and businesses.","footer.explore":"Explore","footer.contact":"Contact",
     "footer.rights":"© 2026 Restar Solar. All rights reserved.","footer.built":"Solar supply & installation · Sudan",
-    "price.contact":"Contact for price",
+    "price.contact":"Contact for price","stock.out":"Out of stock","stock.low":"Only {n} left",
     "nav.certs":"Certificates","qnav.certs":"Certificates","nav.factory":"Factory",
     "certs.eyebrow":"Trust","certs.title":"Certified quality","certs.sub":"Our products and factory are certified to international standards — ISO 9001, TÜV SÜD, CQC, and CE. Tap a certificate to enlarge.",
     "nav.download":"Download","nav.projects":"Projects","nav.news":"News","nav.faq":"FAQ",
@@ -621,7 +624,7 @@ const I18N = {
     "modal.specs":"Spécifications","modal.inquire":"Demander sur WhatsApp","modal.price":"Prix",
     "footer.tag":"Énergie solaire fiable pour les maisons, boutiques et entreprises du Sudan.","footer.explore":"Explorer","footer.contact":"Contact",
     "footer.rights":"© 2026 Restar Solar. Tous droits réservés.","footer.built":"Fourniture & installation solaire · Sudan",
-    "price.contact":"Prix sur demande",
+    "price.contact":"Prix sur demande","stock.out":"Rupture de stock","stock.low":"Plus que {n} en stock",
     "nav.certs":"Certificats","qnav.certs":"Certificats","nav.factory":"Usine",
     "certs.eyebrow":"Confiance","certs.title":"Qualité certifiée","certs.sub":"Nos produits et notre usine sont certifiés aux normes internationales — ISO 9001, TÜV SÜD, CQC et CE. Touchez un certificat pour l'agrandir.",
     "nav.download":"Télécharger","nav.projects":"Projets","nav.news":"Actualités","nav.faq":"FAQ",
@@ -648,7 +651,7 @@ const I18N = {
     "modal.specs":"المواصفات","modal.inquire":"استفسار عبر واتساب","modal.price":"السعر",
     "footer.tag":"طاقة شمسية موثوقة للمنازل والمحلات والشركات في السودان.","footer.explore":"استكشف","footer.contact":"اتصل بنا",
     "footer.rights":"© 2026 ريستار سولار. جميع الحقوق محفوظة.","footer.built":"توريد وتركيب الطاقة الشمسية · السودان",
-    "price.contact":"السعر عند الطلب",
+    "price.contact":"السعر عند الطلب","stock.out":"نفذ من المخزون","stock.low":"باقي {n} فقط",
     "nav.certs":"الشهادات","qnav.certs":"الشهادات","nav.factory":"المصنع",
     "certs.eyebrow":"الثقة","certs.title":"جودة معتمدة","certs.sub":"منتجاتنا ومصنعنا معتمدون وفق المعايير الدولية — ISO 9001 وTÜV SÜD وCQC وCE. اضغط على شهادة لتكبيرها.",
     "nav.download":"تحميل","nav.projects":"المشاريع","nav.news":"الأخبار","nav.faq":"الأسئلة الشائعة",
@@ -657,6 +660,12 @@ const I18N = {
 let lang = "ar";
 const CART_ENABLED = false;
 window.CART_ENABLED = CART_ENABLED;
+// Populated after DOMContentLoaded once window.CART_API_BASE is set (that
+// happens in a later <script> block) — see the fetch below, near the bottom
+// of this file. sku -> stock_qty; a SKU absent from this object is
+// untracked (unlimited), matching the backend's inventory.js semantics.
+let INVENTORY = {};
+const LOW_STOCK_THRESHOLD = 5;
 const t = k => (I18N[lang][k] !== undefined ? I18N[lang][k] : k);
 const tr = o => (o[lang] !== undefined ? o[lang] : o.en);
 const fmt = n => n.toLocaleString("fr-FR");
@@ -685,6 +694,11 @@ function renderGrid(){
   document.getElementById("grid").innerHTML = list.map(p=>{
     const col = CAT_COLOR[p.cat]||"#004598";
     const ic = ICON[p.cat]||ICON.kit;
+    const stock = INVENTORY[p.id]; // undefined = untracked/unlimited
+    const outOfStock = stock === 0;
+    const stockBadge = outOfStock ? `<span class="stock-badge stock-badge--out">${t('stock.out')}</span>`
+      : (typeof stock === "number" && stock <= LOW_STOCK_THRESHOLD) ? `<span class="stock-badge stock-badge--low">${t('stock.low').replace('{n}', stock)}</span>`
+      : "";
     return `<article class="card" style="--cat:${col}">
       <div class="card-art">
         <div class="sheen"></div>
@@ -696,13 +710,14 @@ function renderGrid(){
         <span class="cat-tag">${catLabel(p.cat)}</span>
         <h3>${p.name}</h3>
         <div class="price">${p.price?fmt(p.price)+' <small>FCFA</small>':t('price.contact')}</div>
+        ${stockBadge}
         <p class="desc">${tr(p.desc)}</p>
         <div class="card-actions">
           <button class="btn btn--line" data-open="${p.id}">${t('card.details')}</button>
           <a class="btn btn--dark" target="_blank" rel="noopener"
              href="${wa((lang==='fr'?'Bonjour Restar Solar, je suis intéressé par : ':lang==='ar'?'مرحبًا ريستار سولار، أنا مهتم بـ: ':'Hello Restar Solar, I am interested in: ')+p.name+'.')}">
              ${t('card.inquire')}</a>
-          ${window.CART_ENABLED ? `<button class="btn btn--ghost add-to-cart" data-sku="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" type="button">Add to cart</button>` : ''}
+          ${window.CART_ENABLED ? `<button class="btn btn--ghost add-to-cart" data-sku="${p.id}" data-name="${(p.name || '').replace(/"/g, '&quot;')}" type="button" ${outOfStock ? 'disabled' : ''}>${outOfStock ? t('stock.out') : 'Add to cart'}</button>` : ''}
         </div>
       </div>
     </article>`;
@@ -884,6 +899,19 @@ observeReveals();
   var STREAM_API = 'https://rest-solar-agent.onrender.com/api/chat/stream';
   var SESSION = 'rs-' + Math.random().toString(36).slice(2);
 
+  // Country this site serves. The backend routes a handoff to that country's
+  // agents (broadcast_to_admins_in_country in app/api/ws.py), so a stale value
+  // would drop Nigerian customers into Sudan's console. Patched per country
+  // by set_handoff_country() in scripts/generate_country_site.py.
+  var RS_COUNTRY = 'SD';
+  // Handoff runs over a websocket on the API origin. The AI path below keeps
+  // using plain HTTP streaming, untouched — the socket is only opened if the
+  // customer actually asks for a person.
+  var WS_ORIGIN = API.replace(/^http/, 'ws').replace(/\/api\/chat$/, '');
+  var CONV_ID = Math.floor(Math.random() * 1000000);
+  var ws = null;
+  var humanMode = false;
+
   // Build widget HTML
   var el = document.createElement('div');
   el.innerHTML = [
@@ -915,6 +943,12 @@ observeReveals();
     // Typing indicator
     '<div id="rs-typing" style="display:none;padding:0 18px 8px;',
     'font-size:12px;color:rgba(255,255,255,.4);">Thinking…</div>',
+
+    // Live-agent handoff
+    '<div style="padding:0 12px 6px;text-align:center;">',
+    '<button id="rs-human" style="background:none;border:none;color:rgba(255,255,255,.45);',
+    'font-size:12px;cursor:pointer;text-decoration:underline;font-family:inherit;padding:4px;">',
+    'Talk to a person</button></div>',
 
     // Input
     '<div style="padding:12px;border-top:1px solid rgba(255,255,255,.08);display:flex;gap:8px;">',
@@ -949,7 +983,48 @@ observeReveals();
     bubble.style.display = 'flex';
   };
   document.getElementById('rs-send').onclick = send;
+  document.getElementById('rs-human').onclick = requestHuman;
   input.addEventListener('keydown', function(e){ if(e.key==='Enter') send(); });
+
+  function connectWS(onOpen){
+    if (ws && ws.readyState === WebSocket.OPEN) { onOpen(); return; }
+    ws = new WebSocket(WS_ORIGIN + '/ws/' + CONV_ID + '?country=' + encodeURIComponent(RS_COUNTRY));
+    ws.onopen = onOpen;
+    ws.onmessage = function (ev) {
+      var d;
+      try { d = JSON.parse(ev.data); } catch (e) { return; }
+      if (d.type === 'status')        { typing.style.display = 'none'; addMsg('status', d.text); }
+      else if (d.type === 'agent_message') { typing.style.display = 'none'; addMsg('agent', d.text); }
+      else if (d.type === 'token')    { typing.style.display = 'none'; addMsg('assistant', d.text); }
+    };
+    // Fail back to the AI path rather than stranding the customer on a dead
+    // socket — losing the handoff is recoverable, a chat that eats messages is not.
+    ws.onclose = function () { humanMode = false; };
+    ws.onerror = function () {
+      humanMode = false;
+      typing.style.display = 'none';
+      addMsg('status', 'Could not reach our team right now — the assistant is still here to help.');
+    };
+  }
+
+  function requestHuman(){
+    if (humanMode) { addMsg('status', "You're already in the queue for our team."); return; }
+    typing.style.display = 'block';
+    connectWS(function () {
+      humanMode = true;
+      ws.send(JSON.stringify({ action: 'request_human' }));
+    });
+  }
+
+  function sendViaSocket(text){
+    if (!ws || ws.readyState !== WebSocket.OPEN) {
+      humanMode = false;
+      addMsg('status', 'Connection to our team dropped — your message went to the assistant instead.');
+      return false;
+    }
+    ws.send(JSON.stringify({ message: text }));
+    return true;
+  }
 
   function greet(){
     addMsg('assistant', "Hello! I'm your Restar Solar assistant. How can I help you today?");
@@ -960,6 +1035,9 @@ observeReveals();
     if(!text) return;
     addMsg('user', text);
     input.value = '';
+    // In human mode the socket carries the message and the reply comes back as
+    // agent_message; only fall through to the AI path if the socket is gone.
+    if (humanMode && sendViaSocket(text)) return;
     typing.style.display = 'block';
 
     var liveBubble = null;
@@ -1026,17 +1104,68 @@ observeReveals();
   var AGENT_LABEL = 'Zhang Gang 🇸🇩';
   window.CART_API_BASE = '';
   window.CART_CURRENCY = 'SDG';
+  // Stock badges: fetch once CART_API_BASE exists, then re-render the grid
+  // (INVENTORY/renderGrid are defined in the earlier <script> block — top-level
+  // let/const and function declarations are shared across inline scripts on
+  // the same page). Silently no-ops on failure — an unreachable inventory
+  // endpoint should never block the storefront from showing products.
+  if (window.CART_API_BASE) {
+    fetch(window.CART_API_BASE + '/api/inventory')
+      .then(function (res) { return res.json(); })
+      .then(function (rows) {
+        rows.forEach(function (row) { INVENTORY[row.sku] = row.stock_qty; });
+        if (typeof renderGrid === 'function') renderGrid();
+      })
+      .catch(function () {});
+  }
+  window.CART_SESSION_ID = SESSION;
   window.CART_WHATSAPP_NUMBER = AGENT_PHONE;
+  // Session-consistent sales-rep override: if this country has a live cart
+  // backend with a real seeded rep pool (Mali today), replace the Tom Yang
+  // fallback with the customer's actually-assigned local rep. No-ops (keeps
+  // the fallback above) if CART_API_BASE is empty, the request fails, or the
+  // backend has no active reps (e.g. Sudan's rep pool is intentionally
+  // empty — see schema.sql) — this must never be able to break page load.
+  if (window.CART_API_BASE) {
+    fetch(window.CART_API_BASE + '/api/sales-rep?session=' + encodeURIComponent(SESSION) + '&source=page_load')
+      .then(function (res) { if (!res.ok) throw new Error('no_rep'); return res.json(); })
+      .then(function (rep) {
+        if (rep && rep.phone) {
+          AGENT_PHONE = rep.phone;
+          window.CART_WHATSAPP_NUMBER = rep.phone;
+          // Keeps the chat widget's "Send to X" button label truthful —
+          // without this it would keep saying "Send to Tom Yang" while
+          // actually messaging whichever local rep the backend assigned.
+          if (rep.name) AGENT_LABEL = rep.name;
+        }
+      })
+      .catch(function () {});
+  }
 
   function addMsg(role, text){
     var d = document.createElement('div');
     var isUser = role==='user';
+
+    // Handoff states get their own look so the customer can tell a human from
+    // the assistant, and a queue notice from either.
+    if (role === 'status') {
+      d.style.cssText = 'align-self:center;font-size:12px;color:rgba(255,255,255,.45);' +
+        'font-family:Inter,system-ui,sans-serif;text-align:center;padding:2px 8px;';
+      d.textContent = text;
+      msgs.appendChild(d);
+      msgs.scrollTop = msgs.scrollHeight;
+      return;
+    }
+
+    var bg = isUser
+      ? 'align-self:flex-end;background:linear-gradient(180deg,#FFC24D,#F7A81B);color:#241500;border-bottom-right-radius:4px;'
+      : role === 'agent'
+        ? 'align-self:flex-start;background:rgba(37,211,102,.16);color:#ECE9F5;border-bottom-left-radius:4px;border:1px solid rgba(37,211,102,.35);'
+        : 'align-self:flex-start;background:rgba(255,255,255,.09);color:#ECE9F5;border-bottom-left-radius:4px;';
     d.style.cssText = [
       'max-width:82%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.55;',
       'font-family:Inter,system-ui,sans-serif;white-space:pre-wrap;word-break:break-word;',
-      isUser
-        ? 'align-self:flex-end;background:linear-gradient(180deg,#FFC24D,#F7A81B);color:#241500;border-bottom-right-radius:4px;'
-        : 'align-self:flex-start;background:rgba(255,255,255,.09);color:#ECE9F5;border-bottom-left-radius:4px;'
+      bg
     ].join('');
 
     // Check for WhatsApp order trigger
